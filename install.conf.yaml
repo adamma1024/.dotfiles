@@ -1,9 +1,21 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+
 - clean: ['~']
 
 - link:
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
+
     ~/.vimrc: vimrc
+    ~/.vim/template:
+        path: vim-template
+        relink: true
+        create: true
+
     ~/.zshrc: zshrc
 
-
+- shell:
+    - [ git submodule update --init --depth 1 --recursive, Installing submodules ]

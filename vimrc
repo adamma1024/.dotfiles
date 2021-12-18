@@ -1,8 +1,7 @@
 " ############################# system source ############################
 
 " load plugins 
-source ~/.dotfiles/plugin.vim
-# source $VIM_CONFIG_HOME/plugins
+source $DOTFILES/plugin.vim
 
 " ############################# user perference ############################
 
