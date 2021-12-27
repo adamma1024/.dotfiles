@@ -14,6 +14,8 @@
 #include <set>
 #include <vector>
 #include <cstring>
+// tolower, toupper, isupper, islower, isdigit, isalpha
+#include <cctype>
 
 typedef pair<int, int> PII;
 typedef vector<int> VI;
