@@ -114,12 +114,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # nvim alias
-# alias vim="/usr/local/bin/nvim"
+alias vim="nvim"
+alias vi="nvim"
 # g++
 alias g++="g++ -std=c++14 -DLOCAL"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+alias python=python3
+alias py=python3
 
 # vim config home path
 export VIM_HOME="$HOME/.vim"
@@ -131,11 +131,12 @@ export PATH=$VIM_PLUGIN_HOME/fzf/bin:$PATH
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source emcc
-export EMCC_HOME="/Users/malin/code/web-pro/emsdk"
-export initEMCC() {
-  source $EMCC_HOME/emsdk_env.sh
-  echo "init finish"
-}
+# If you want to enable the LLVM
+# export EMCC_HOME="/Users/malin/code/web-pro/emsdk"
+# export initEMCC() {
+#   source $EMCC_HOME/emsdk_env.sh
+#   echo "init finish"
+# }
 
 # fzf
 if type rg &> /dev/null; then
@@ -144,3 +145,16 @@ if type rg &> /dev/null; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# vault
+if ! type "$vault" > /dev/null; then
+  export VAULT_ADDR=https://vault.reversible.dev
+fi
+
+# pnpm
+export PNPM_HOME="/Users/malin/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -1,6 +1,17 @@
 [user]
-	name = qq240814476
-	email = 240814476@qq.com
-	password = malin258
+	name = adamma1024
+	email = adamma2048@gmail.com
 [pull]
 	rebase = true
+[gc]
+	auto = 200
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+	azreposCredentialType = oauth
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "azrepos:org/msdata"]
+	azureAuthority = https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
+	username = adamma@microsoft.com
+[core]
+	editor = nvim
