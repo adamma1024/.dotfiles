@@ -11,13 +11,13 @@ return {
     local directions = require("hop.hint").HintDirection
     vim.keymap.set("n", "<leader><leader>w", function()
       hop.hint_words({ direction = directions.AFTER_CURSOR })
-    end, {})
+    end, { desc = "Go to next words" })
     vim.keymap.set("n", "<leader><leader>b", function()
       hop.hint_words({ direction = directions.BEFORE_CURSOR })
-    end, {})
-    vim.keymap.set("n", "<leader><leader>c", ":HopChar1<CR>", {})
-    vim.keymap.set("n", "<leader><leader>s", ":HopChar2<CR>", {})
+    end, { desc = "Back to previous words" })
+    vim.keymap.set("n", "<leader><leader>c", ":HopChar1<CR>", { desc = "Hop with one character" })
+    vim.keymap.set("n", "<leader><leader>s", ":HopChar2<CR>", { desc = "Hop 2 chars" })
     -- Pattern Matching with t keyword
-    vim.keymap.set("n", "<leader><leader>t", ":HopPattern<CR>", { noremap = true })
+    vim.keymap.set("n", "<leader><leader>t", ":HopPattern<CR>", { noremap = true, desc = "Hop's pattern searching" })
   end,
 }

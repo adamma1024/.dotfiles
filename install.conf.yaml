@@ -12,8 +12,13 @@
     ~/.config/nvim:
       force: true
       path: nvim
+    ~/.vim/template:
+      path: vim-template
 
     ~/.zshrc: zshrc
+    ~/.oh-my-zsh:
+      force: true
+      path: .oh-my-zsh
 
 - shell:
     - [git submodule update --init --depth 1 --recursive, Installing submodules]
