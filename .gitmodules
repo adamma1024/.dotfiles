@@ -23,3 +23,6 @@
 [submodule "iterm2/iterm"]
 	path = iterm2/iterm
 	url = https://github.com/dracula/iterm.git
+[submodule ".tmux/plugins/tmux"]
+	path = .tmux/plugins/tmux
+	url = https://git::@github.com/dracula/tmux
