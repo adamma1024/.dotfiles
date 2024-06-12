@@ -6,3 +6,5 @@ vim.g.mapleader = " "
 -- desc can be retrieved by the which-key plugin
 vim.keymap.set("i", "jj", "<ESC>", { silent = true, desc = "Exit the insert mode" })
 vim.keymap.set("n", "<leader>w", ":w<Enter>", { desc = "Save" })
+
+vim.keymap.set("n", "<leader>cpp", ":CpPath<Enter>", { desc = "Copy relative path" })

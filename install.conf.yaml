@@ -20,5 +20,9 @@
       force: true
       path: .oh-my-zsh
 
+    ~/.tmux.conf: .tmux.conf
+    ~/.tmux/plugins:
+      path: .tmux/plugins
+
 - shell:
     - [git submodule update --init --depth 1 --recursive, Installing submodules]
