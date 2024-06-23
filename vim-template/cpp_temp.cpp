@@ -18,11 +18,11 @@
 // #include <cctype>
 #include <bits/stdc++.h> // import all std libs
 
+using namespace std;
+
 typedef pair<int, int> PII;
 typedef vector<int> VI;
 typedef vector<VI> VVI;
-
-using namespace std;
 
 // 单调队列, 求 k 区间 滑动窗口的最大值
 // vector<int> maxSlidingWindow(vector<int>& nums, int k) {
