@@ -3,19 +3,20 @@
  * Mail: adamma2048@gmail.com
  * *************************************************************/
 
-#include <algorithm>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <iostream>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
-#include <string>
-#include <vector>
-// tolower, toupper, isupper, islower, isdigit, isalpha
-#include <cctype>
+// #include <algorithm>
+// #include <cstdio>
+// #include <cstdlib>
+// #include <cstring>
+// #include <iostream>
+// #include <map>
+// #include <queue>
+// #include <set>
+// #include <stack>
+// #include <string>
+// #include <vector>
+// // tolower, toupper, isupper, islower, isdigit, isalpha
+// #include <cctype>
+#include <bits/stdc++.h> // import all std libs
 
 typedef pair<int, int> PII;
 typedef vector<int> VI;
@@ -54,7 +55,8 @@ using namespace std;
 //				for(int j = 1;j<=s2;j++){
 //						if(text1[i-1] == text2[j-1]){
 //								dp[i][j] =
-//dp[i-1][j-1] + 1; 						} else { 								dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+// dp[i-1][j-1] + 1; 						} else {
+// dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
 //						}
 //				}
 //		}
@@ -97,8 +99,8 @@ using namespace std;
 //	for(int i = 1;i<n;i++){
 //		int cur = i % 2, pre = cur ^ 1;
 //		dp[cur][0] = max(dp[pre][0], dp[pre][1]); // 如果当前不拿,
-//前一个可拿可不拿, 此时取最大值, 实现局部最优 		dp[cur][1] = dp[pre][0] +
-//nums[i];
+// 前一个可拿可不拿, 此时取最大值, 实现局部最优 		dp[cur][1] =
+// dp[pre][0] + nums[i];
 //	}
 //	int ind = (n-1) % 2;
 //	return max(dp[ind][0], dp[ind][1]);

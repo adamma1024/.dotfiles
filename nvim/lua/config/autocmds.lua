@@ -4,7 +4,7 @@
 -- ############################## template of code #############################
 -- cpp template
 vim.api.nvim_create_autocmd("BufNewFile", {
-  pattern = "cpp",
+  pattern = "*.cpp",
   command = "0r ~/.vim/template/cpp_temp.cpp",
 })
 
