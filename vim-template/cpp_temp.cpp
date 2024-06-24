@@ -3,10 +3,13 @@
  * Mail: adamma2048@gmail.com
  * *************************************************************/
 
+#include <bits/stdc++.h> // import all std libs
 // #include <algorithm>
 // #include <cstdio>
 // #include <cstdlib>
 // #include <cstring>
+#include <iostream>
+#include <sstream>
 // #include <map>
 // #include <queue>
 // #include <set>
@@ -15,8 +18,6 @@
 // #include <vector>
 // // tolower, toupper, isupper, islower, isdigit, isalpha
 // #include <cctype>
-#include <bits/stdc++.h> // import all std libs
-#include <iostream>
 
 using namespace std;
 
