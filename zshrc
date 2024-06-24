@@ -117,7 +117,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="nvim"
 # g++
-alias g++="g++ -std=c++14 -DLOCAL"
+alias g++="g++ -std=gnu++20 -DLOCAL"
 alias python=python3
 alias py=python3
 

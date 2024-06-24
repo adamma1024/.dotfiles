@@ -7,7 +7,6 @@
 // #include <cstdio>
 // #include <cstdlib>
 // #include <cstring>
-// #include <iostream>
 // #include <map>
 // #include <queue>
 // #include <set>
@@ -17,6 +16,7 @@
 // // tolower, toupper, isupper, islower, isdigit, isalpha
 // #include <cctype>
 #include <bits/stdc++.h> // import all std libs
+#include <iostream>
 
 using namespace std;
 
@@ -129,4 +129,6 @@ typedef vector<VI> VVI;
 //	}
 //}
 
-int main() { return 0; }
+int main() {
+  return 0;
+}
