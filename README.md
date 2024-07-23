@@ -4,10 +4,20 @@ All dot files in one repo, base on 👉[dotbot](https://github.com/anishathalye/
 
 ## Usage
 
+### MacOS
+>
 > 🎉 Only one line command, solve all dot files!
 
 ```bash
   cd ~ && git clone https://github.com/adamma1024/.dotfiles.git && cd .dotfiles && ./install
+```
+
+### Windows
+
+⚠️P Please install the pwsh v7+ first.
+
+```
+pwsh ./install-win.ps1
 ```
 
 ### iTerm profile

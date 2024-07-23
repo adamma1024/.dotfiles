@@ -63,5 +63,5 @@ gcc -v | node -v | python3 -v
 
 ######################### Terminal ################################
 # Terminal Dracula
-Copy-Item -Force .\windows-terminal-settings.json $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+Copy-Item -Force ./windows-terminal-settings.json $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 
