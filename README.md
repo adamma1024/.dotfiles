@@ -27,6 +27,18 @@ Also, I am using the [Dracula](https://draculatheme.com/) theme, since I love th
 > Dracula can't live in the sunlight.
 But, it seems that they'll provide the light theme soon, Lmao 😂
 
+# TODOs
+
+## Windows
+
+1. Map gitconfig
+2. Drill down why did the symbolic link not work
+
+## MacOS
+
+1. Add installing steps for Homebrow, iterms, zsh, neovim, nerd font, starship
+2. ln more configurations
+
 # Friend Links
 
 Inspired by [Teacher Tang](https://github.com/logTXT) 😘
