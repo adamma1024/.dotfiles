@@ -132,7 +132,7 @@ export PATH=$VIM_PLUGIN_HOME/fzf/bin:$PATH
 
 # source emcc
 # If you want to enable the LLVM
-# export EMCC_HOME="/Users/malin/code/web-pro/emsdk"
+# export EMCC_HOME="$HOME/code/web-pro/emsdk"
 # export initEMCC() {
 #   source $EMCC_HOME/emsdk_env.sh
 #   echo "init finish"
@@ -152,7 +152,7 @@ if ! type "$vault" > /dev/null; then
 fi
 
 # pnpm
-export PNPM_HOME="/Users/malin/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

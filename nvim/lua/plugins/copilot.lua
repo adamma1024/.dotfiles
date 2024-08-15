@@ -8,7 +8,7 @@ return {
       suggestion = { enable = false },
       panel = { enable = false },
       filetypes = {
-        cpp = true,
+        cpp = false,
         lua = true,
         javascript = true,
         typescript = true,
@@ -55,7 +55,7 @@ return {
             mode = "symbol",
             max_width = 50,
             symbol_map = { Copilot = "" },
-            ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            ellipsis_char = "...",    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
             show_labelDetails = true, -- show labelDetails in menu. Disabled by default
           }),
         },
@@ -65,7 +65,16 @@ return {
   {
     "zbirenbaum/copilot-cmp",
     dependencies = "copilot.lua",
-    opts = {},
+    opts = {
+      filetypes = {
+        cpp = false,
+        lua = true,
+        javascript = true,
+        typescript = true,
+        javascriptreact = true,
+        typescriptreact = true,
+      },
+    },
     config = function(_, opts)
       local copilot_cmp = require("copilot_cmp")
       copilot_cmp.setup(opts)
