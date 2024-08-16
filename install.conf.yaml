@@ -24,5 +24,7 @@
     ~/.tmux/plugins:
       path: .tmux/plugins
 
+    ~/.wezterm.lua: .wezterm.lua
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
