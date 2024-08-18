@@ -59,6 +59,7 @@ export FPATH="$ZSH_PLUGINS/eza/completions/zsh:$FPATH"
 enable_proxy() {
     export http_proxy="http://127.0.0.1:7890"
     export https_proxy="http://127.0.0.1:7890"
+    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
     echo "Proxy enabled."
 }
 
@@ -66,6 +67,7 @@ enable_proxy() {
 disable_proxy() {
     unset http_proxy
     unset https_proxy
+    unset no_proxy
     echo "Proxy disabled."
 }
 
