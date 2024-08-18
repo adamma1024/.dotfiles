@@ -4,7 +4,7 @@ if ! command -v brew &>/dev/null; then
 fi
 
 rm -rf ~/.dotfiles
-git clone https://github.com/adamma1024/.dotfiles.git ~
+git clone https://github.com/adamma1024/.dotfiles.git ~/.dotfiles
 
 cd .dotfiles
 
