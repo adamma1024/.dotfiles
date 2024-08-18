@@ -1,8 +1,7 @@
-
 # Check if Homebrew is installed
-if command -v brew &> /dev/null
-else
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew &>/dev/null; then
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 rm -rf ~/.dotfiles
 git clone https://github.com/adamma1024/.dotfiles.git ~
