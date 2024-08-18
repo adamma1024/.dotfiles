@@ -6,7 +6,7 @@ fi
 rm -rf ~/.dotfiles
 git clone https://github.com/adamma1024/.dotfiles.git ~/.dotfiles
 
-cd .dotfiles
+cd ~/.dotfiles
 
 # restore brew packages
 brew bundle --file=./mac/mac-backup-files/Brewfile
