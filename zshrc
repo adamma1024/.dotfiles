@@ -10,12 +10,6 @@ export DOTFILES="$HOME/.dotfiles"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$DOTFILES/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_CUSTOM="$DOTFILES/.oh-my-zsh/custom"
 ZSH_PLUGINS="$DOTFILES/.oh-my-zsh/plugins"
 
@@ -27,11 +21,15 @@ ZSH_PLUGINS="$DOTFILES/.oh-my-zsh/plugins"
 plugins=(
   git
   vi-mode
-  zsh-autosuggestions
-  zsh-syntax-highlighting
   eza
   z
 )
+# These plugins are installed by homebrew
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,31 +40,6 @@ alias vi="nvim"
 alias g++="g++ -std=c++17 -DLOCAL"
 alias python=python3
 alias py=python3
-
-# vim config home path
-export VIM_HOME="$HOME/.vim"
-export VIM_PLUGIN_HOME="$HOME/.vim/plugged"
-export VIM_CONFIG_HOME="$HOME/.vim/config"
-export PATH=$VIM_PLUGIN_HOME/fzf/bin:$PATH
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# source emcc
-# If you want to enable the LLVM
-# export EMCC_HOME="$HOME/code/web-pro/emsdk"
-# export initEMCC() {
-#   source $EMCC_HOME/emsdk_env.sh
-#   echo "init finish"
-# }
-
-# fzf
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-  export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
-fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # vault
 if ! type "$vault" > /dev/null; then
@@ -81,3 +54,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 export FPATH="$ZSH_PLUGINS/eza/completions/zsh:$FPATH"
+
