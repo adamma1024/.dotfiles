@@ -9,7 +9,7 @@ git clone https://github.com/adamma1024/.dotfiles.git ~
 cd .dotfiles
 
 # restore brew packages
-brew bundle --file=/mac/mac-backup-files/Brewfile
+brew bundle --file=./mac/mac-backup-files/Brewfile
 
 # Create Symbolic links
 ./install

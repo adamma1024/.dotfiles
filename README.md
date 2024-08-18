@@ -9,7 +9,7 @@ All dot files in one repo, base on 👉[dotbot](https://github.com/anishathalye/
 > 🎉 Only one line command, solve all dot files!
 
 ```bash
-  cd ~ && git clone https://github.com/adamma1024/.dotfiles.git && cd .dotfiles && ./install
+  /bin/bash -c "$(curl -fsSL /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ### Windows
