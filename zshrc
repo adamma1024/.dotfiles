@@ -55,3 +55,17 @@ esac
 # pnpm end
 export FPATH="$ZSH_PLUGINS/eza/completions/zsh:$FPATH"
 
+# Function to enable proxy settings
+enable_proxy() {
+    export http_proxy="http://127.0.0.1:7890"
+    export https_proxy="http://127.0.0.1:7890"
+    echo "Proxy enabled."
+}
+
+# Function to disable proxy settings
+disable_proxy() {
+    unset http_proxy
+    unset https_proxy
+    echo "Proxy disabled."
+}
+
