@@ -8,8 +8,18 @@ All dot files in one repo, base on 👉[dotbot](https://github.com/anishathalye/
 >
 > 🎉 Only one line command, solve all dot files!
 
+#### install
 ```bash
   /bin/bash -c "$(curl -fsSL /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+#### backup
+
+```sh 
+sh ./mac/backup-mac.sh
+```
+
+
 ```
 
 ### Windows
