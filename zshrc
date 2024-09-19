@@ -25,9 +25,13 @@ plugins=(
   z
 )
 # These plugins are installed by homebrew
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+export SHARE_FOLDER="/usr/local/share"
+if [[ "$(uname)" == "Linux" ]]; then
+  SHARE_FOLDER="/usr/share"
+fi
+source "$SHARE_FOLDER/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$SHARE_FOLDER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$SHARE_FOLDER/powerlevel10k/powerlevel10k.zsh-theme"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
