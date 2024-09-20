@@ -44,6 +44,7 @@ alias vi="nvim"
 alias g++="g++ -std=c++17 -DLOCAL"
 alias python=python3
 alias py=python3
+alias pip=pip3
 
 # vault
 if ! type "$vault" > /dev/null; then
