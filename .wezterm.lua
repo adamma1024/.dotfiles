@@ -12,7 +12,8 @@ config.font_size = 20.0
 config.color_scheme = "Dracula"
 
 -- Show title and resize bar
-config.window_decorations = "TITLE | RESIZE"
+config.window_decorations = "TITLE"
+config.hide_tab_bar_if_only_one_tab = true
 
 config.window_background_opacity = 0.6
 config.macos_window_background_blur = 10
