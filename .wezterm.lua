@@ -17,6 +17,8 @@ config.hide_tab_bar_if_only_one_tab = true
 
 config.window_background_opacity = 0.6
 config.macos_window_background_blur = 10
+config.initial_rows = 40
+config.initial_cols = 100
 
 -- Full screen mode is same as macOS full screen
 config.keys = {
