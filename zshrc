@@ -75,4 +75,3 @@ disable_proxy() {
     unset no_proxy
     echo "Proxy disabled."
 }
-

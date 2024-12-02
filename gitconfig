@@ -1,5 +1,5 @@
 [user]
-	name = adamma1024
+	name = Adam Ma
 	email = adamma2048@gmail.com
 [pull]
 	rebase = true
@@ -18,3 +18,8 @@
 [credential "azrepos:org/powerbi"]
 	azureAuthority = https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
 	username = adamma@microsoft.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
