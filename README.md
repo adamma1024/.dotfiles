@@ -30,6 +30,17 @@ sh ./mac/backup-mac.sh
 pwsh ./install-win.ps1
 ```
 
+### Claude Code
+
+Configuration files for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) are stored in `.claude/` and symlinked to `~/.claude/`:
+
+- `commands/` - Custom slash commands
+- `hooks/` - Event hooks for tool calls
+- `skills/` - Skill definitions for specialized tasks
+- `settings.json` - Claude Code settings
+- `settings.md` - Settings documentation
+- `CLAUDE.md` - Global instructions for Claude
+
 ### iTerm profile
 
 Import the iTerm's profile from the `./iterm/ML Theme.json`
