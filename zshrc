@@ -42,9 +42,14 @@ alias vim="nvim"
 alias vi="nvim"
 # g++
 alias g++="g++ -std=c++17 -DLOCAL"
-alias python=python3
-alias py=python3
-alias pip=pip3
+# pyenv init
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+#
+# # Load pyenv automatically
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+
 
 # vault
 if ! type "$vault" > /dev/null; then
@@ -75,3 +80,33 @@ disable_proxy() {
     unset no_proxy
     echo "Proxy disabled."
 }
+
+export SPARK_HOME=$(brew --prefix apache-spark)/libexec
+export PATH=$SPARK_HOME/bin:$PATH
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/malin/Desktop/GoogleAuth/cs777-448806-b38b27f9aabf.json"
+export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
+
+# Created by `pipx` on 2025-06-28 04:24:49
+export PATH="$PATH:/Users/malin/.local/bin"
+
+# Load secrets from ~/.env (not tracked in git)
+[[ -f ~/.env ]] && source ~/.env
+
+# Claude Code
+export ANTHROPIC_BASE_URL=https://anyrouter.top
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
