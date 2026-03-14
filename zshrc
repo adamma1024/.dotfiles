@@ -92,9 +92,6 @@ export PATH="$PATH:/Users/malin/.local/bin"
 # Load secrets from ~/.env (not tracked in git)
 [[ -f ~/.env ]] && source ~/.env
 
-# Claude Code
-export ANTHROPIC_BASE_URL=https://anyrouter.top
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

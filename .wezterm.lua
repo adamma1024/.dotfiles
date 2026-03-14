@@ -27,6 +27,36 @@ config.keys = {
 		mods = "CMD|CTRL",
 		action = wezterm.action.ToggleFullScreen,
 	},
+	-- Dev layout: Cmd+Shift+D
+	-- Opens split pane (LazyVim left, Expo logs right) + floating Simulator
+	{
+		key = "d",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.SpawnCommandInNewTab({
+			args = {
+				"bash",
+				"-c",
+				"~/code/web-pro/student-secondhand-market/scripts/dev-layout.sh && exec zsh",
+			},
+		}),
+	},
+	-- Quick split: Cmd+Shift+E to open Expo logs in right pane
+	{
+		key = "e",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.SplitHorizontal({
+			args = {
+				"bash",
+				"-c",
+				"cd ~/code/web-pro/student-secondhand-market && npx expo start 2>&1; exec zsh",
+			},
+		}),
+	},
+	-- Pane navigation
+	{ key = "h", mods = "CMD|SHIFT", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "l", mods = "CMD|SHIFT", action = wezterm.action.ActivatePaneDirection("Right") },
+	-- Close current pane
+	{ key = "x", mods = "CMD|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
 }
 
 -- and finally, return the configuration to wezterm

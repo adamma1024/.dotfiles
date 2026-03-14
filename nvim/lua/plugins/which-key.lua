@@ -4,6 +4,9 @@ return {
     local wk = require("which-key")
     wk.add({
       { "<leader>w", ":w<CR>", desc = "Save", mode = "n", noremap = true },
+      { "<leader>m", group = "Mobile Dev" },
+      { "<leader>mi", group = "iOS" },
+      { "<leader>ma", group = "Android" },
     })
   end,
 }

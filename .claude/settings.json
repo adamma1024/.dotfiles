@@ -5,6 +5,66 @@
     "BASH_MAX_TIMEOUT_MS": "420000"
   },
   "includeCoAuthoredBy": true,
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx prisma generate)",
+      "Bash(git add backend/prisma/schema.prisma backend/src/graphql/schema.ts)",
+      "Bash(git status -u)",
+      "Bash(ls -la /Users/malin/code/work/phoenixedutech.com-v2/frontend/src/pages/*.tsx)",
+      "Bash(git checkout backend/src/modules/auth/email.ts backend/src/modules/auth/resolvers.ts)",
+      "Bash(npm install i18next)",
+      "Bash(npm install -D jest ts-jest @types/jest)",
+      "Bash(npm test)",
+      "Bash(npm install -D ts-node --workspace=backend)",
+      "Bash(npm run test --workspace=backend)",
+      "Bash(npx tsc --noEmit --project frontend/tsconfig.json)",
+      "Bash(npm run lint --workspace=frontend)",
+      "Bash(npm install eslint-plugin-tailwindcss --workspace=frontend --save-dev)",
+      "Bash(npx tsc --noEmit --project backend/tsconfig.json)",
+      "Bash(npm run lint)",
+      "Bash(tree:*)",
+      "Bash(npx prisma migrate:*)",
+      "Bash(npx prisma db push:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run build:*)",
+      "Bash(xargs:*)",
+      "Bash(npm install:*)",
+      "Bash(npm ls:*)",
+      "Bash(git -C /Users/malin/code/work/phoenixedutech.com-v2 log main..HEAD --oneline)",
+      "Bash(git -C /Users/malin/code/work/phoenixedutech.com-v2 diff main...HEAD --stat)",
+      "Bash(git -C /Users/malin/code/work/phoenixedutech.com-v2 diff main...HEAD -- backend/ frontend/src/components/ProtectedRoute.tsx frontend/src/components/layout/MainLayout.tsx frontend/src/components/layout/Header.tsx frontend/src/App.tsx frontend/src/hooks/useProfile.ts frontend/src/api/graphql/profile.ts frontend/src/locales/en/translation.json frontend/src/styles/custom-app-styles.css)",
+      "WebSearch",
+      "Bash(npx eslint:*)",
+      "WebFetch(domain:neon.com)",
+      "WebFetch(domain:www.better-auth.com)",
+      "Bash(ls:*)",
+      "Bash(git stash:*)",
+      "Bash(git stash pop:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx --workspace=frontend eslint:*)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "mcp__Neon__list_projects",
+      "mcp__Neon__run_sql",
+      "Bash(lsof:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Bash(printf:*)",
+      "Bash(xxd:*)",
+      "Bash(set:*)",
+      "mcp__Neon__get_connection_string",
+      "Bash(psql:*)",
+      "Bash(script -q /dev/null npx prisma migrate diff:*)",
+      "Bash(TOKEN=\"5XgmiYlKjRVmaFz9hvI9unMJUzqUuVYU\")",
+      "Bash(PGPASSWORD=malin258 psql:*)",
+      "Bash(PGPASSWORD=npg_VjAF0asIMDl7 psql:*)",
+      "Bash(python3:*)",
+      "Bash(node -e:*)"
+    ],
+    "defaultMode": "plan"
+  },
   "model": "opus",
   "hooks": {
     "UserPromptSubmit": [
@@ -18,18 +78,7 @@
         ]
       }
     ],
-    "PreToolUse": [
-      {
-        "matcher": "Edit|MultiEdit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "# Prevent editing on main branch\n[ \"$(git branch --show-current)\" != \"main\" ] || { echo '{\"block\": true, \"message\": \"Cannot edit files on main branch. Create a feature branch first.\"}' >&2; exit 2; }",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
+    "PreToolUse": [],
     "PostToolUse": [
       {
         "matcher": "Edit|MultiEdit|Write",
@@ -72,5 +121,13 @@
         ]
       }
     ]
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "effortLevel": "medium",
+  "mcpServers": {
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?project_ref=eodfvgafqbzyzajacuqx"
+    }
   }
 }

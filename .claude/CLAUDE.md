@@ -64,6 +64,8 @@ Before implementing ANY task, check if relevant skills apply:
 - GraphQL operations → `graphql-schema` skill
 - Debugging issues → `systematic-debugging` skill
 - UI components → `react-ui-patterns` skill
+- Data fetching/mutations/caching → `tanstack-query` skill
+- Database queries/REST routes → `db-flow` skill
 
 ## Common Commands
 

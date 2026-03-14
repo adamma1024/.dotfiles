@@ -10,3 +10,34 @@ vim.keymap.set("i", "jj", "<ESC>", { silent = true, desc = "Exit the insert mode
 -- vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true, noremap = true, desc = "Save" })
 
 vim.keymap.set("n", "<leader>cpp", ":CpPath<CR>", { desc = "Copy relative path" })
+
+-- Mobile Development keymaps (<leader>m prefix)
+-- iOS
+vim.keymap.set("n", "<leader>mib", function()
+  vim.cmd("!xcodebuild -scheme $(xcodebuild -list -json 2>/dev/null | python3 -c \"import sys,json;print(json.load(sys.stdin)['project']['schemes'][0])\") -sdk iphonesimulator build 2>&1 | tail -5")
+end, { desc = "iOS: Build" })
+
+vim.keymap.set("n", "<leader>mir", function()
+  vim.cmd("!xcrun simctl boot 'iPhone 16' 2>/dev/null; open -a Simulator")
+end, { desc = "iOS: Run Simulator" })
+
+vim.keymap.set("n", "<leader>mil", function()
+  vim.cmd("split | terminal xcrun simctl spawn booted log stream --style compact --predicate 'subsystem != \"com.apple.runningboard\"'")
+end, { desc = "iOS: Stream Logs" })
+
+-- Android
+vim.keymap.set("n", "<leader>mab", function()
+  vim.cmd("!./gradlew assembleDebug 2>&1 | tail -10")
+end, { desc = "Android: Build Debug" })
+
+vim.keymap.set("n", "<leader>mai", function()
+  vim.cmd("!adb install -r app/build/outputs/apk/debug/app-debug.apk")
+end, { desc = "Android: Install APK" })
+
+vim.keymap.set("n", "<leader>mal", function()
+  vim.cmd("split | terminal adb logcat --format=color -v brief")
+end, { desc = "Android: Logcat" })
+
+vim.keymap.set("n", "<leader>mas", function()
+  vim.cmd("!scrcpy --max-size 1024 &")
+end, { desc = "Android: Screen Mirror" })

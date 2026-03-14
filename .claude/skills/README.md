@@ -21,6 +21,7 @@ This directory contains project-specific skills that provide Claude with domain 
 | Skill | Description |
 |-------|-------------|
 | [graphql-schema](./graphql-schema/SKILL.md) | GraphQL queries, mutations, code generation |
+| [supabase](./supabase/SKILL.md) | Supabase Auth, Database, SSR, RLS, Storage, Realtime |
 
 ## Skill Combinations for Common Tasks
 
