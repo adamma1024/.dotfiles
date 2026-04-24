@@ -23,6 +23,12 @@ This directory contains project-specific skills that provide Claude with domain 
 | [graphql-schema](./graphql-schema/SKILL.md) | GraphQL queries, mutations, code generation |
 | [supabase](./supabase/SKILL.md) | Supabase Auth, Database, SSR, RLS, Storage, Realtime |
 
+### Learning & Knowledge
+| Skill | Description |
+|-------|-------------|
+| [english-lesson](./english-lesson/SKILL.md) | English lesson summarizer — extract vocab, categorize topics, pronunciation issues, practice exercises |
+| [system-design](./system-design/SKILL.md) | System design interview note creation from Hello Interview |
+
 ## Skill Combinations for Common Tasks
 
 ### Building a New Feature

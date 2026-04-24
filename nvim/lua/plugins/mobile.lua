@@ -55,7 +55,7 @@ return {
 
   -- Mason: ensure Kotlin LSP is installed
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "kotlin-language-server",

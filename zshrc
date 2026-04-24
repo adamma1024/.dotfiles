@@ -81,8 +81,10 @@ disable_proxy() {
     echo "Proxy disabled."
 }
 
-export SPARK_HOME=$(brew --prefix apache-spark)/libexec
-export PATH=$SPARK_HOME/bin:$PATH
+if command -v brew &>/dev/null && brew --prefix apache-spark &>/dev/null; then
+  export SPARK_HOME=$(brew --prefix apache-spark)/libexec
+  export PATH=$SPARK_HOME/bin:$PATH
+fi
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/malin/Desktop/GoogleAuth/cs777-448806-b38b27f9aabf.json"
 export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
 
@@ -107,3 +109,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH=$PATH:$HOME/.maestro/bin
+export PATH=$PATH:$HOME/.maestro/bin
