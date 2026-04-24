@@ -8,6 +8,12 @@ vim.api.nvim_create_autocmd("BufNewFile", {
   command = "0r ~/.vim/template/cpp_temp.cpp",
 })
 
+-- python template
+vim.api.nvim_create_autocmd("BufNewFile", {
+  pattern = "*.py",
+  command = "0r ~/.vim/template/py_temp.py",
+})
+
 -- Create a command to copy the current file path to the clipboard
 vim.api.nvim_create_user_command("CpPath", function()
   local path = vim.fn.expand("%:p")

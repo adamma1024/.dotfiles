@@ -224,12 +224,35 @@ DATABASE_URL=postgresql://...          (direct Postgres connection)
 - `DATABASE_URL` is server-only (bypasses RLS)
 - Never expose `service_role` key client-side
 
+## Soft Delete + RLS Gotcha
+
+PostgREST applies the SELECT RLS policy to `RETURNING *` after UPDATE/DELETE. If your SELECT policy hides the updated row (e.g. `status != 'deleted'`), PostgREST sees 0 rows returned and the client gets empty data with no error — the update committed in the DB but the client thinks nothing happened.
+
+**Fix:** Use a `SECURITY DEFINER` RPC for soft deletes. It bypasses RLS; enforce ownership manually inside the function.
+
+```sql
+CREATE OR REPLACE FUNCTION soft_delete_row(row_id UUID)
+RETURNS VOID LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+BEGIN
+  UPDATE my_table SET status = 'deleted', updated_at = now()
+  WHERE id = row_id AND user_id = auth.uid();
+  IF NOT FOUND THEN RAISE EXCEPTION 'Not found or not owned'; END IF;
+END; $$;
+```
+
+```ts
+const { error } = await supabase.rpc('soft_delete_row', { row_id: id });
+```
+
+Refs: [PostgREST #1844](https://github.com/PostgREST/postgrest/discussions/1844), [supabase-js #1941](https://github.com/supabase/supabase-js/issues/1941)
+
 ## Anti-Patterns
 - **Don't use `getSession()` for auth checks** — use `getUser()` which validates with the server
 - **Don't skip middleware** — session cookies need refreshing to stay alive
 - **Don't expose `service_role` key** — it bypasses RLS; use `anon` key client-side
 - **Don't create a new Supabase client per request in client components** — use `useState(() => createClient())` to create once
 - **Don't forget `try/catch` around `createSupabaseServer()`** during static generation when env vars may be absent
+- **Don't use `.update()` for soft deletes when RLS hides the result** — use SECURITY DEFINER RPC instead (see above)
 
 ## Integration
 - Works with `@supabase/auth-ui-react` for pre-built auth forms

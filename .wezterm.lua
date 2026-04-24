@@ -20,8 +20,11 @@ config.macos_window_background_blur = 10
 config.initial_rows = 40
 config.initial_cols = 100
 
--- Full screen mode is same as macOS full screen
+-- Always spawn zsh as login shell (ensures full PATH/env in all tabs and panes)
+config.default_prog = { "/bin/zsh", "-l" }
+
 config.keys = {
+	-- Full screen
 	{
 		key = "f",
 		mods = "CMD|CTRL",
@@ -34,9 +37,9 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.SpawnCommandInNewTab({
 			args = {
-				"bash",
-				"-c",
-				"~/code/web-pro/student-secondhand-market/scripts/dev-layout.sh && exec zsh",
+				"/bin/zsh",
+				"-lc",
+				"~/code/web-pro/student-secondhand-market/scripts/dev-layout.sh; exec zsh",
 			},
 		}),
 	},
@@ -46,17 +49,44 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.SplitHorizontal({
 			args = {
-				"bash",
-				"-c",
-				"cd ~/code/web-pro/student-secondhand-market && npx expo start 2>&1; exec zsh",
+				"/bin/zsh",
+				"-lc",
+				"cd ~/code/web-pro/student-secondhand-market && npm start 2>&1; exec zsh",
 			},
 		}),
 	},
-	-- Pane navigation
+	-- Pane navigation (vim-style: h/j/k/l)
 	{ key = "h", mods = "CMD|SHIFT", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "CMD|SHIFT", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "CMD|SHIFT", action = wezterm.action.ActivatePaneDirection("Up") },
 	{ key = "l", mods = "CMD|SHIFT", action = wezterm.action.ActivatePaneDirection("Right") },
 	-- Close current pane
 	{ key = "x", mods = "CMD|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+	-- Tab navigation (browser-style)
+	{ key = "Tab", mods = "CTRL", action = wezterm.action.ActivateTabRelative(1) },
+	{ key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
+	-- Rename tab
+	{
+		key = "r",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.PromptInputLine({
+			description = "Enter new tab name:",
+			action = wezterm.action_callback(function(window, pane, line)
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
+		}),
+	},
+}
+
+-- Cmd+Click opens URLs in a new browser tab
+config.mouse_bindings = {
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "CMD",
+		action = wezterm.action.OpenLinkAtMouseCursor,
+	},
 }
 
 -- and finally, return the configuration to wezterm
